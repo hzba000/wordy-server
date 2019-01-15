@@ -1,3 +1,4 @@
+//word refers to word data
 const express = require('express');
 const Joi = require('joi');
 const wordRouter = express.Router();
@@ -62,8 +63,13 @@ wordRouter.get('/:wordid', (request, response) => {
 // UPDATE WORD BY ID
 wordRouter.put('/:wordid', jwtPassportMiddleware, (request, response) => {
     const wordUpdate = {
-        title: request.body.title,
-        content: request.body.content
+        words: request.body.words,
+        definitions: request.body.definitions,
+        images: request.body.images,
+        audio: request.body.audio,
+        listenhighscore: request.body.listenhighscore,
+        imagehighscore: request.body.imagehighscore,
+        definitionhighscore: request.body.definitionhighscore
     };
 
     // const validation = Joi.validate(wordUpdate, WordJoiSchema);

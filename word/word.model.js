@@ -3,7 +3,7 @@ const Joi = require('joi');
 
 const wordSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
-    words: {type: Array},
+    words: {type: Array, required:true},
     definitions: {type: Array},
     images: {type: Array},
     audio: {type: Array},
