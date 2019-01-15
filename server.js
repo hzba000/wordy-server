@@ -24,6 +24,9 @@ const app = express();
 passport.use(localStrategy); 
 passport.use(jwtStrategy); 
 
+app.use(cors());
+app.options('*', cors());
+
 //log HTTP layer
 app.use(morgan('common'));
 //Body Parsing Middleware
@@ -32,7 +35,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // ROUTER SETUP
-app.use(cors({origin: CLIENT_ORIGIN}));
+// app.use(cors({origin: CLIENT_ORIGIN}));
 app.use('/api/auth', authRouter); 
 app.use('/api/user', userRouter); 
 app.use('/api/word', wordRouter);
