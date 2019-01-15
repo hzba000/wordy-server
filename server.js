@@ -9,6 +9,7 @@ const {CLIENT_ORIGIN, PORT, DATABASE_URL, TEST_DATABASE_URL} = require('./config
 
 const { authRouter } = require('./auth/auth.router');
 const { userRouter } = require('./user/user.router');
+const { wordRouter } = require('./word/word.router')
 const { localStrategy, jwtStrategy } = require('./auth/auth.strategy');
 
 // const bodyParser = require('body-parser');
@@ -34,6 +35,7 @@ app.use(express.static('public'));
 app.use(cors({origin: CLIENT_ORIGIN}));
 app.use('/api/auth', authRouter); 
 app.use('/api/user', userRouter); 
+app.use('/api/word', wordRouter);
 app.use('*', function (req, res) {
   res.status(404).json({ message: 'Not Found' });
 });
