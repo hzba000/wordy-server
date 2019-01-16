@@ -3,13 +3,13 @@ const Joi = require('joi');
 
 const wordSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
-    words: {type: Array, required:true},
-    definitions: {type: Array},
-    images: {type: Array},
-    audio: {type: Array},
-    listenhighscore: {type: Number},
-    imagehighscore: {type: Number},
-    definitionhighscore: {type: Number}
+    words: {type: Array, required:true, default: []},
+    definitions: {type: Array, default:[]},
+    images: {type: Array, default:[]},
+    audio: {type: Array, default:[]},
+    listenhighscore: {type: Number, default:0},
+    imagehighscore: {type: Number, default:0},
+    definitionhighscore: {type: Number, default:0}
 });
 
 wordSchema.methods.serialize = function () {
