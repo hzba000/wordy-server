@@ -25,7 +25,7 @@ passport.use(localStrategy);
 passport.use(jwtStrategy); 
 
 app.use(cors());
-app.options('*', cors());
+// app.options('*', cors());
 
 //log HTTP layer
 app.use(morgan('common'));
