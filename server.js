@@ -9,6 +9,7 @@ const {CLIENT_ORIGIN, PORT, DATABASE_URL, TEST_DATABASE_URL} = require('./config
 
 const { authRouter } = require('./auth/auth.router');
 const { userRouter } = require('./user/user.router');
+const { wordRouter } = require('./word/word.router')
 const { localStrategy, jwtStrategy } = require('./auth/auth.strategy');
 
 // const bodyParser = require('body-parser');
@@ -23,6 +24,9 @@ const app = express();
 passport.use(localStrategy); 
 passport.use(jwtStrategy); 
 
+app.use(cors());
+app.options('*', cors());
+
 //log HTTP layer
 app.use(morgan('common'));
 //Body Parsing Middleware
@@ -31,12 +35,13 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // ROUTER SETUP
-app.use(cors({origin: CLIENT_ORIGIN}));
+// app.use(cors({origin: CLIENT_ORIGIN}));
 app.use('/api/auth', authRouter); 
 app.use('/api/user', userRouter); 
-app.use('*', function (req, res) {
-  res.status(404).json({ message: 'Not Found' });
-});
+app.use('/api/word', wordRouter);
+// app.use('*', function (req, res) {
+//   res.status(404).json({ message: 'Not Found' });
+// });
 
 
 // SERVER SETUP
