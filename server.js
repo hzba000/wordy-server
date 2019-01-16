@@ -25,7 +25,7 @@ passport.use(localStrategy);
 passport.use(jwtStrategy); 
 
 app.use(cors());
-// app.options('*', cors());
+app.options('*', cors());
 
 //log HTTP layer
 app.use(morgan('common'));
@@ -39,9 +39,9 @@ app.use(express.static('public'));
 app.use('/api/auth', authRouter); 
 app.use('/api/user', userRouter); 
 app.use('/api/word', wordRouter);
-app.use('*', function (req, res) {
-  res.status(404).json({ message: 'Not Found' });
-});
+// app.use('*', function (req, res) {
+//   res.status(404).json({ message: 'Not Found' });
+// });
 
 
 // SERVER SETUP
