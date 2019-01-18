@@ -30,7 +30,7 @@ app.options('*', cors());
 //log HTTP layer
 app.use(morgan('common'));
 //Body Parsing Middleware
-app.use(express.json());
+// app.use(express.json()); -----------------TRYING WITHOUT PARSER
 //Public Assets
 app.use(express.static('public'));
 
