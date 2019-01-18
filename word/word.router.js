@@ -87,6 +87,32 @@ wordRouter.put('/:wordid', jwtPassportMiddleware, (request, response) => {
         });
 });
 
+wordRouter.patch('/:wordid', jwtPassportMiddleware, (request, response) => {
+    const wordUpdate = {
+        words: request.body.words,
+        definitions: request.body.definitions,
+        images: request.body.images,
+        audio: request.body.audio,
+        listenhighscore: request.body.listenhighscore,
+        imagehighscore: request.body.imagehighscore,
+        definitionhighscore: request.body.definitionhighscore
+    };
+
+    // const validation = Joi.validate(wordUpdate, WordJoiSchema);
+    // if (validation.error) {
+    //     return response.status(400).json({ error: validation.error });
+    // }
+    console.log(request.body);
+    // Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
+    Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
+        .then(() => {
+            return response.status(204).end();
+        })
+        .catch(error => {
+            return response.status(500).json(error);
+        });
+});
+
 // REMOVE Word BY ID
 wordRouter.delete('/:wordid', jwtPassportMiddleware, (request, response) => {
     Word.findByIdAndDelete(request.params.wordid)
