@@ -78,7 +78,7 @@ wordRouter.put('/:wordid', jwtPassportMiddleware, (request, response) => {
     // }
     console.log(request.body);
     // Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
-    Word.findByIdAndUpdate(request.params.wordid)
+    Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
         .then(() => {
             return response.status(204).end();
         })
