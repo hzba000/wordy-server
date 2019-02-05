@@ -8,4 +8,3 @@ exports.JWT_EXPIRY = process.env.JWT_EXPIRY || '7d';
 
 
 
-//You really need a local database, for realllz
