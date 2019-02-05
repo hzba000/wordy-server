@@ -1,10 +1,9 @@
 //word refers to word data
 const express = require('express');
-const Joi = require('joi');
 const wordRouter = express.Router();
 
 const { jwtPassportMiddleware } = require('../auth/auth.strategy');
-const { Word, WordJoiSchema } = require('./word.model.js');
+const { Word } = require('./word.model.js');
 
 //SUBMIT A WORD
 wordRouter.post('/', jwtPassportMiddleware, (request, response) => {
@@ -18,12 +17,6 @@ wordRouter.post('/', jwtPassportMiddleware, (request, response) => {
         imagehighscore: request.body.imagehighscore,
         definitionhighscore: request.body.definitionhighscore
     };
-
-
-    // const validation = Joi.validate(newWord, WordJoiSchema);
-    // if (validation.error) {
-    //     return response.status(400).json({ error: validation.error });
-    // }
 
     Word.create(newWord)
         .then(createdUser => {
@@ -72,12 +65,6 @@ wordRouter.put('/:wordid', jwtPassportMiddleware, (request, response) => {
         definitionhighscore: request.body.definitionhighscore
     };
 
-    // const validation = Joi.validate(wordUpdate, WordJoiSchema);
-    // if (validation.error) {
-    //     return response.status(400).json({ error: validation.error });
-    // }
-    console.log(request.body);
-    // Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
     Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
         .then(() => {
             return response.status(204).end();
@@ -98,12 +85,6 @@ wordRouter.patch('/:wordid', jwtPassportMiddleware, (request, response) => {
         definitionhighscore: request.body.definitionhighscore
     };
 
-    // const validation = Joi.validate(wordUpdate, WordJoiSchema);
-    // if (validation.error) {
-    //     return response.status(400).json({ error: validation.error });
-    // }
-    console.log(request.body);
-    // Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
     Word.findByIdAndUpdate(request.params.wordid, wordUpdate)
         .then(() => {
             return response.status(204).end();

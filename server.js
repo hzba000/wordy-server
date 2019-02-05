@@ -12,9 +12,6 @@ const { userRouter } = require('./user/user.router');
 const { wordRouter } = require('./word/word.router')
 const { localStrategy, jwtStrategy } = require('./auth/auth.strategy');
 
-// const bodyParser = require('body-parser');
-// const jsonParser = bodyParser.json();
-
 mongoose.Promise = global.Promise;
 
 let server;
@@ -35,13 +32,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // ROUTER SETUP
-// app.use(cors({origin: CLIENT_ORIGIN}));
 app.use('/api/auth', authRouter); 
 app.use('/api/user', userRouter); 
 app.use('/api/word', wordRouter);
-// app.use('*', function (req, res) {
-//   res.status(404).json({ message: 'Not Found' });
-// });
+
 
 
 // SERVER SETUP

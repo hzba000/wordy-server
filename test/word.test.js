@@ -212,8 +212,6 @@ describe('Integration tests for: /api/word', function () {
             listenhighscore: faker.random.number(),
             imagehighscore: faker.random.number(),
             definitionhighscore: faker.random.number()
-            // title: faker.lorem.sentence(),
-            // content: faker.lorem.paragraphs()
         };
     }
 });

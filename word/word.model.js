@@ -33,15 +33,6 @@ wordSchema.methods.serialize = function () {
     };
 };
 
-
-//Validation
-// const WordJoiSchema = Joi.object().keys({
-//     user: Joi.string().optional(),
-//     title: Joi.string().min(1).required(),
-//     content: Joi.string().min(1).required(),
-//     createDate: Joi.date().timestamp()
-// });
-
 const Word = mongoose.model('word', wordSchema);
 
 module.exports = { Word };
