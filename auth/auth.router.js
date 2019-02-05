@@ -29,4 +29,4 @@ authRouter.post('/refresh', jwtPassportMiddleware, (request, response) => {
     response.json({ jwtToken, user });
 });
 
-module.exports = { authRouter };
+module.exports = { authRouter }; 
