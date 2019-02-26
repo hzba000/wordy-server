@@ -8,5 +8,5 @@ deploy:
     secure: hS9iOg/k6JVvkXizHRp90rGvqHijRRrDeDRKPNT+WAU31tHdjweTs1GvwTQri3f/OALgDlFAjfdNE5fr3Igt+txvZlorCimVMX9ECgoNAYaJoyow3J4FoTtXrK+VxEuZvsr+IsQVIYm2ZXfqSe+jgLN9FoYmQ+C4f5YICCgsyH661wHHjRfz0eU3tLHDfGlaWOViDd5HoYscHl5t16AkUSYcCwkZmSc7P+x8mGRn2n8hkpV9N0IsdwC7lCWxFdVQiyYrA1/1KYUdaR+8IXUeGGf+YGvdyYFJwIDsl3Q77JAvpXesARFSwZhwEG0kHhu+BbpoOImAJtyb6dXX2JUWOduUf69EDZrJThIAYQupB6Nqg32Ox75K0EUdsZDRlnyEBpIOwSLfJmju9RCBkDXzakDM1JEhpDZPQ4sx30n0N7CV+wAExIVfdsjApLT7RcI0gPjUiCv9nLFQ63iYqdU/MX+mOP5Dom8l15Qe5yvlITt2kdwX7fMtQo9Cgu7CZ1bSY3CiwGklemWxktGgYvmHr/XMTu/NHu3i1OH2IO3/5+cTK1zarJxzw7/gOcWkR6P7NqINX9r/WV9HPD5nS68lDgfRd/Mctsxw7Ym2PSEHDuEhlr9stDkvJYYirlcvRCxq/D0nws35m8ZUCaGtQvLP/E4oFmIolV4Xj5TBRpnzaEc=
   app: vast-spire-34820
   on:
-    repo: hzba000/capstone-test-server
+    repo: hzba000/wordy-server
     branch: update-data-insteadof-adding-arrays
